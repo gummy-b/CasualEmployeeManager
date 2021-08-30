@@ -5,7 +5,7 @@ namespace CasualEmployee.API.Data
 {
     public interface IRolesRepo
     {
-        IEnumerable<Roles> GetRoles();
+        IEnumerable<Roles> GetAllRoles();
         Roles GetRoles(int id);
     }
 }
