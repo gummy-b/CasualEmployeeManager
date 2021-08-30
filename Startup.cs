@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CasualEmployee.API.Data;
+using CasualEmployee.API.Data.MockRepos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +34,9 @@ namespace CasualEmployee.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CasualEmployee.API", Version = "v1" });
             });
+
+            //Register Repo for DI
+            services.AddScoped<IRolesRepo, R_MockRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using CasualEmployee.API.Data.MockRepos;
+using CasualEmployee.API.Data;
 using CasualEmployee.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +9,12 @@ namespace CasualEmployee.API.Controllers
     [Route("api/[controller]")]
     public class RolesController : ControllerBase
     {
-        private readonly R_MockRepo _repo = new R_MockRepo();
+        private readonly IRolesRepo _repo;
+
+        public RolesController(IRolesRepo repo)
+        {
+            _repo = repo;
+        }
 
         //GET ALL
         [HttpGet]
