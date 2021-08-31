@@ -5,6 +5,11 @@ namespace CasualEmployee.API.Data.MockRepos
 {
     public class R_MockRepo : IRolesRepo
     {
+        public void AddRole(Roles role)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Roles> GetAllRoles()
         {
             return new List<Roles>
@@ -23,6 +28,11 @@ namespace CasualEmployee.API.Data.MockRepos
                 RoleName = "Cas Employee 1",
                 RoleRate = 20.99M
             };
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

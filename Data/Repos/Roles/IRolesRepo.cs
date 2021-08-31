@@ -7,5 +7,7 @@ namespace CasualEmployee.API.Data
     {
         IEnumerable<Roles> GetAllRoles();
         Roles GetRoles(int id);
+        void AddRole(Roles role);
+        bool SaveChanges();
     }
 }
