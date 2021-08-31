@@ -76,5 +76,21 @@ namespace CasualEmployee.API.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteRole(int id)
+        {
+            var roleItem = _repo.GetRoles(id);
+            if (roleItem == null)
+            {
+                return NotFound();
+            }
+
+            _repo.DeleteRole(roleItem);
+
+            _repo.SaveChanges();
+
+            return NoContent();
+        }
     }
 }
