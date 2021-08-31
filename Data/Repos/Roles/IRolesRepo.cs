@@ -10,5 +10,6 @@ namespace CasualEmployee.API.Data
         void AddRole(Roles role);
         bool SaveChanges();
         void UpdateRole(Roles role);
+        void DeleteRole(Roles role);
     }
 }
