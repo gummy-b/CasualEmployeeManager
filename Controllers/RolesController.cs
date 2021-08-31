@@ -31,7 +31,7 @@ namespace CasualEmployee.API.Controllers
             return Ok(_mapper.Map<IEnumerable<RolesReadDTO>>(roleItems));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetRole")]
         public ActionResult<RolesReadDTO> GetRole(int id)
         {
             var roleItem = _repo.GetRoles(id);
@@ -41,6 +41,22 @@ namespace CasualEmployee.API.Controllers
             }
 
             return NotFound();
+        }
+
+        [HttpPost]
+        public ActionResult<RolesReadDTO> AddRole(int id, RolesCreateDTO rolesAddDTO)
+        {
+            // Map incoming dto back to a model
+            var roleItemModel = _mapper.Map<Roles>(rolesAddDTO);
+            _repo.AddRole(roleItemModel);
+
+            // Flush changes into Db
+            _repo.SaveChanges();
+
+            var rolesReadDTO = _mapper.Map<RolesReadDTO>(roleItemModel);
+
+            return CreatedAtRoute(nameof(GetRole), new { id = rolesReadDTO.Id }, rolesReadDTO);
+
         }
     }
 }

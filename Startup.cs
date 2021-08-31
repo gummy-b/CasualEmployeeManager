@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CasualEmployee.API.Data;
 using CasualEmployee.API.Data.MockRepos;
+using CasualEmployee.API.Data.Repos.Roles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -40,7 +41,7 @@ namespace CasualEmployee.API
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             //Register Repo for DI
-            services.AddScoped<IRolesRepo, R_MockRepo>();
+            services.AddScoped<IRolesRepo, RolesRepo>();
             //Register connection string
             services.AddDbContext<CEContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("CEConnectionString")));
         }
