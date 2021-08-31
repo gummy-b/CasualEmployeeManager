@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="automapper.extensions.microsoft.dependencyinjection" Version="8.1.1" />
     <PackageReference Include="microsoft.entityframeworkcore" Version="5.0.9" />
     <PackageReference Include="microsoft.entityframeworkcore.design" Version="5.0.9">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

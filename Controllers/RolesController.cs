@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using AutoMapper;
 using CasualEmployee.API.Data;
+using CasualEmployee.API.DTOs.Roles;
 using CasualEmployee.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,30 +11,32 @@ namespace CasualEmployee.API.Controllers
     [Route("api/[controller]")]
     public class RolesController : ControllerBase
     {
+        // Global variables
         private readonly IRolesRepo _repo;
+        private readonly IMapper _mapper;
 
-        public RolesController(IRolesRepo repo)
+        // Constructor
+        public RolesController(IRolesRepo repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
-        //GET ALL
+        // Endpoints
         [HttpGet]
-        public ActionResult<IEnumerable<Roles>> AllRoles()
+        public ActionResult<IEnumerable<RolesReadDTO>> AllRoles()
         {
             var roleItems = _repo.GetAllRoles();
 
-            return Ok(roleItems);
+            return Ok(_mapper.Map<IEnumerable<RolesReadDTO>>(roleItems));
         }
 
-        //GET
-        //api/roles/5
         [HttpGet("{id}")]
-        public ActionResult<Roles> GetRole(int id)
+        public ActionResult<RolesReadDTO> GetRole(int id)
         {
             var roleItem = _repo.GetRoles(id);
 
-            return Ok(roleItem);
+            return Ok(_mapper.Map<RolesReadDTO>(roleItem));
         }
     }
 }

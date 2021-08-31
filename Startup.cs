@@ -36,6 +36,9 @@ namespace CasualEmployee.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CasualEmployee.API", Version = "v1" });
             });
 
+            //Register AutoMapper 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             //Register Repo for DI
             services.AddScoped<IRolesRepo, R_MockRepo>();
             //Register connection string
