@@ -35,8 +35,12 @@ namespace CasualEmployee.API.Controllers
         public ActionResult<RolesReadDTO> GetRole(int id)
         {
             var roleItem = _repo.GetRoles(id);
+            if (roleItem != null)
+            {
+                return Ok(_mapper.Map<RolesReadDTO>(roleItem));
+            }
 
-            return Ok(_mapper.Map<RolesReadDTO>(roleItem));
+            return NotFound();
         }
     }
 }
