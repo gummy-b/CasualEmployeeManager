@@ -9,5 +9,6 @@ namespace CasualEmployee.API.Data
         Roles GetRoles(int id);
         void AddRole(Roles role);
         bool SaveChanges();
+        void UpdateRole(Roles role);
     }
 }

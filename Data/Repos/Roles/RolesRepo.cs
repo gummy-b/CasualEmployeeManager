@@ -37,5 +37,10 @@ namespace CasualEmployee.API.Data.Repos.Roles
         {
             return (_con.SaveChanges() >= 0);
         }
+
+        public void UpdateRole(Models.Roles role)
+        {
+            // Nothing here Haha
+        }
     }
 }

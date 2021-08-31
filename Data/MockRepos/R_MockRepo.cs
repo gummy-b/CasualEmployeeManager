@@ -34,5 +34,10 @@ namespace CasualEmployee.API.Data.MockRepos
         {
             throw new System.NotImplementedException();
         }
+
+        public void UpdateRole(Roles role)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
