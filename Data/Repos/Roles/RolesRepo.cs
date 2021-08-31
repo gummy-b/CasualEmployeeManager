@@ -23,6 +23,16 @@ namespace CasualEmployee.API.Data.Repos.Roles
             _con.Roles.Add(role);
         }
 
+        public void DeleteRole(Models.Roles role)
+        {
+            if (role == null)
+            {
+                throw new ArgumentNullException(nameof(role));
+            }
+
+            _con.Roles.Remove(role);
+        }
+
         public IEnumerable<Models.Roles> GetAllRoles()
         {
             return _con.Roles.ToList();

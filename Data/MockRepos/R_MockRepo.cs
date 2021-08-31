@@ -39,5 +39,10 @@ namespace CasualEmployee.API.Data.MockRepos
         {
             throw new System.NotImplementedException();
         }
+
+        void IRolesRepo.DeleteRole(Roles role)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
