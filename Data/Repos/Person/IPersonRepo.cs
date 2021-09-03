@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CasualEmployee.API.Models;
 
 namespace CasualEmployee.API.Data.Repos.Persons
@@ -7,5 +8,7 @@ namespace CasualEmployee.API.Data.Repos.Persons
     {
         IEnumerable<Person> AllPeople();
         Person GetPerson(int id);
+        Task<Person> AddPerson(Person person);
+        bool SaveChanges();
     }
 }
