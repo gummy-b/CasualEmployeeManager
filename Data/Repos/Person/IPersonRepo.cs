@@ -11,6 +11,6 @@ namespace CasualEmployee.API.Data.Repos.Persons
         Task<Person> AddPerson(Person person);
         bool SaveChanges();
 
-        void Update(Person person);
+        void UpdatePerson(Person person);
     }
 }
