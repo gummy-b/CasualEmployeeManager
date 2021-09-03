@@ -10,5 +10,7 @@ namespace CasualEmployee.API.Data.Repos.Persons
         Person GetPerson(int id);
         Task<Person> AddPerson(Person person);
         bool SaveChanges();
+
+        void Update(Person person);
     }
 }

@@ -42,5 +42,10 @@ namespace CasualEmployee.API.Data.Repos.Persons
         {
             return (_con.SaveChanges() >= 0);
         }
+
+        void IPersonRepo.Update(Person person)
+        {
+            // Nothing here
+        }
     }
 }
