@@ -41,6 +41,23 @@ namespace CasualEmployee.API.Controllers
             return NotFound();
         }
 
+        [HttpPut("{id}")]
+        public ActionResult UpdatePerson(int id, UpdatePersonDTO updateDto)
+        {
+            var personModelFromRepo = _repo.GetPerson(id);
+            if (personModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(updateDto, personModelFromRepo);
+
+            _repo.UpdatePerson(personModelFromRepo);
+            _repo.SaveChanges();
+
+            return NoContent();
+        }
+
 
         [HttpPost]
         public ActionResult<PersonReadDTO> AddPerson(PersonCreateDTO createDto)
