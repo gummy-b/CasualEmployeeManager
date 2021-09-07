@@ -7,5 +7,7 @@ namespace CasualEmployee.API.Data.Repos.Casual_Emp
     {
         IEnumerable<CEmployee> GetAllEmployees();
         CEmployee GetEmployee(int id);
+        bool SaveChanges();
+        void CreateEmployee(CEmployee employee);
     }
 }
