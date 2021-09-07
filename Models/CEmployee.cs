@@ -1,8 +1,10 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CasualEmployee.API.Models
 {
+    [Table("Employees")]
     public class CEmployee
     {
         public int Id { get; set; }
