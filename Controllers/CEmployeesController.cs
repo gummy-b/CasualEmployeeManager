@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using AutoMapper;
 using CasualEmployee.API.Data.Repos.Casual_Emp;
 using CasualEmployee.API.DTOs.Employees;
+using CasualEmployee.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CasualEmployee.API.Controllers
@@ -27,7 +28,7 @@ namespace CasualEmployee.API.Controllers
             return Ok(_mapper.Map<IEnumerable<EmployeeReadDTO>>(employees));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetEmployee")]
         public ActionResult<EmployeeReadDTO> GetEmployee(int id)
         {
             var employee = _repo.GetEmployee(id);
@@ -39,5 +40,22 @@ namespace CasualEmployee.API.Controllers
 
             return NotFound();
         }
-    }
-}
+
+        [HttpPost]
+        public ActionResult<EmployeeReadDTO> AddEmployee(EmployeeCreateDTO createDTO)
+        {
+            var employeeModel = _mapper.Map<CEmployee>(createDTO);
+
+            // add converted model
+            _repo.CreateEmployee(employeeModel);
+            // save changes
+            _repo.SaveChanges();
+
+            // created at route
+            var employeeReadDTO = _mapper.Map<EmployeeReadDTO>(employeeModel);
+
+            return CreatedAtRoute(nameof(GetEmployee), new { id = employeeReadDTO.Id }, employeeReadDTO);
+        }
+
+    }// end class
+}// end namespace
