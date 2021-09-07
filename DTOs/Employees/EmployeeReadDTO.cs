@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CasualEmployee.API.Models
+namespace CasualEmployee.API.DTOs.Employees
 {
     public class EmployeeReadDTO
     {
