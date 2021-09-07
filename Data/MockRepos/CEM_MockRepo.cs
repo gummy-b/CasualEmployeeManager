@@ -6,6 +6,11 @@ namespace CasualEmployee.API.Data.MockRepos
 {
     public class CEM_MockRepo : ICasualEmpRepo
     {
+        public void CreateEmployee(CEmployee employee)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<CEmployee> GetAllEmployees()
         {
             return new List<CEmployee>
@@ -19,6 +24,11 @@ namespace CasualEmployee.API.Data.MockRepos
         public CEmployee GetEmployee(int id)
         {
             return new CEmployee { Id = 1, Name = "Ted", Surname = "Lasso", RoleName = "Casual employee 1", ProfilePicture = "img.1" };
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
