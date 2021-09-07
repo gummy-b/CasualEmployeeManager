@@ -17,14 +17,14 @@ namespace CasualEmployee.API.Models
         public string ProfilePicture { get; set; }
         [Required]
         [DisplayName("Role Name")]
+        public string RoleName { get; set; }
 
         #region 
-        public string Role { get; set; }
         // Foreign key(s)
         public int RoleId { get; set; }
         public int PersonId { get; set; }
         // Navigation properties
-        public Roles RoleNav { get; set; }
+        public Roles Role { get; set; }
         public Person Person { get; set; }
         #endregion
     }
