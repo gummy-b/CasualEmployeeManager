@@ -57,5 +57,22 @@ namespace CasualEmployee.API.Controllers
             return CreatedAtRoute(nameof(GetEmployee), new { id = employeeReadDTO.Id }, employeeReadDTO);
         }
 
+        [HttpPut("{id}")]
+        public ActionResult UpdateEmployee(int id, UpdateEmployeeDTO updateDTO)
+        {
+            var employeeModelFromRepo = _repo.GetEmployee(id);
+            if (employeeModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(updateDTO, employeeModelFromRepo);
+
+            _repo.UpdateEmployee(employeeModelFromRepo);
+            _repo.SaveChanges();
+
+            return NoContent();
+        }
+
     }// end class
 }// end namespace
