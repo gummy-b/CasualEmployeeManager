@@ -9,5 +9,6 @@ namespace CasualEmployee.API.Data.Repos.Casual_Emp
         CEmployee GetEmployee(int id);
         bool SaveChanges();
         void CreateEmployee(CEmployee employee);
+        void UpdateEmployee(CEmployee employee);
     }
 }

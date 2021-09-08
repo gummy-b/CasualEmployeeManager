@@ -30,5 +30,10 @@ namespace CasualEmployee.API.Data.MockRepos
         {
             throw new System.NotImplementedException();
         }
+
+        public void UpdateEmployee(CEmployee employee)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

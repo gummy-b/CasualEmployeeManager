@@ -37,5 +37,10 @@ namespace CasualEmployee.API.Data.Repos.Casual_Emp
         {
             return (_context.SaveChanges() >= 0);
         }
+
+        public void UpdateEmployee(CEmployee employee)
+        {
+            // nothing here
+        }
     }
 }
