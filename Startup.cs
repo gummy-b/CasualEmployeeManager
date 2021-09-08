@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CasualEmployee.API.Data;
 using CasualEmployee.API.Data.MockRepos;
 using CasualEmployee.API.Data.Repos.Casual_Emp;
+using CasualEmployee.API.Data.Repos.Emp_Task;
 using CasualEmployee.API.Data.Repos.Persons;
 using CasualEmployee.API.Data.Repos.Roles;
 using Microsoft.AspNetCore.Builder;
@@ -46,6 +47,7 @@ namespace CasualEmployee.API
             services.AddScoped<IRolesRepo, RolesRepo>();
             services.AddScoped<IPersonRepo, PersonRepo>();
             services.AddScoped<ICasualEmpRepo, CasualEmpRepo>();
+            services.AddScoped<IEmpTaskRepo, ET_MockRepo>();
             //Register connection string
             services.AddDbContext<CEContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("CEConnectionString")));
         }
