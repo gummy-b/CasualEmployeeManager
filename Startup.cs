@@ -44,8 +44,8 @@ namespace CasualEmployee.API
 
             //Register Repo for DI
             services.AddScoped<IRolesRepo, RolesRepo>();
-            services.AddScoped<IPersonRepo, P_MockRepo>();
-            services.AddScoped<ICasualEmpRepo, CEM_MockRepo>();
+            services.AddScoped<IPersonRepo, PersonRepo>();
+            services.AddScoped<ICasualEmpRepo, CasualEmpRepo>();
             //Register connection string
             services.AddDbContext<CEContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("CEConnectionString")));
         }
