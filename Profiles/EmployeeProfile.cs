@@ -10,7 +10,7 @@ namespace CasualEmployee.API.Profiles
         {
             CreateMap<EmployeeCreateDTO, CEmployee>();
             CreateMap<UpdateEmployeeDTO, CEmployee>();
-            CreateMap<CEmployee, EmployeeCreateDTO>();
+            CreateMap<CEmployee, EmployeeReadDTO>();
         }
     }
 }
