@@ -1,4 +1,5 @@
 using AutoMapper;
+using CasualEmployee.API.DTOs.Employees.Tasks;
 using CasualEmployee.API.Models;
 
 namespace CasualEmployee.API.Profiles
