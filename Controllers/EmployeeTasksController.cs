@@ -25,7 +25,7 @@ namespace CasualEmployee.API.Controllers
         {
             var taskItems = _repo.GetAllTasks();
 
-            return Ok(_mapper.Map<TaskReadDTO>(taskItems));
+            return Ok(_mapper.Map<IEnumerable<TaskReadDTO>>(taskItems));
         }
 
         [HttpGet("{id}", Name = "GetTask")]
