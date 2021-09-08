@@ -6,7 +6,6 @@ namespace CasualEmployee.API.DTOs.Employees.Tasks
 {
     public class CreateTaskDTO
     {
-        public int Id { get; set; }
         [Required]
         [DisplayName("Task Name")]
         public string TaskName { get; set; }
