@@ -16,14 +16,14 @@ namespace CasualEmployee.API.Data.MockRepos
         {
             return new List<Employee_Task>
             {
-                new Employee_Task{Id = 1, TaskName = "Dashboard", StartDate= Convert.ToDateTime(01-06-2021), EndDate= Convert.ToDateTime(25-06-2021)},
-                new Employee_Task{Id = 1, TaskName = "UX", StartDate= Convert.ToDateTime(01-07-2021), EndDate= Convert.ToDateTime(25-08-2021)}
+                new Employee_Task{Id = 1, TaskName = "Dashboard", StartDate= Convert.ToDateTime("01-06-2021"), EndDate= Convert.ToDateTime("25-06-2021")},
+                new Employee_Task{Id = 2, TaskName = "UX", StartDate= Convert.ToDateTime("01-07-2021"), EndDate= Convert.ToDateTime("25-08-2021")}
             };
         }
 
         public Employee_Task GetTask(int id)
         {
-            return new Employee_Task { Id = 1, TaskName = "Dashboard", StartDate = Convert.ToDateTime(01 - 06 - 2021), EndDate = Convert.ToDateTime(25 - 06 - 2021) };
+            return new Employee_Task { Id = 1, TaskName = "Dashboard", StartDate = Convert.ToDateTime("01-06-2021"), EndDate = Convert.ToDateTime("25-06-2021") };
         }
 
         public bool SaveChanges()
