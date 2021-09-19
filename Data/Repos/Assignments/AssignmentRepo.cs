@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CasualEmployee.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CasualEmployee.API.Data.Repos.Assignments
 {
@@ -25,12 +26,18 @@ namespace CasualEmployee.API.Data.Repos.Assignments
 
         public IEnumerable<Assign_Task> GetAllAssignments()
         {
-            return _con.Assign_Tasks.ToList();
+            return _con.Assign_Tasks
+                            .Include(x => x.Employees)
+                            .Include(x => x.E_Tasks)
+                            .ToList();
         }
 
         public Assign_Task GetAssignedTask(int id)
         {
-            return _con.Assign_Tasks.FirstOrDefault(a => a.Id == id);
+            return _con.Assign_Tasks
+                            .Include(x => x.Employees)
+                            .Include(x => x.E_Tasks)
+                            .FirstOrDefault(a => a.Id == id);
         }
 
         public bool SaveChanges()
