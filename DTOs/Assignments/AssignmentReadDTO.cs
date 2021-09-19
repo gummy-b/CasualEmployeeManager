@@ -1,6 +1,6 @@
 using System;
 
-namespace CasualEmployee.API.Models
+namespace CasualEmployee.API.DTOs.Assignemnts
 {
     public class AssignmentReadDTO
     {

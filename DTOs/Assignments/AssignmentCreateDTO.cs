@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace CasualEmployee.API.Models
+namespace CasualEmployee.API.DTOs.Assignemnts
 {
     public class AssignmentCreateDTO
     {
