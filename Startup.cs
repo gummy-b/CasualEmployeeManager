@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CasualEmployee.API.Data;
 using CasualEmployee.API.Data.MockRepos;
+using CasualEmployee.API.Data.Repos.Assignments;
 using CasualEmployee.API.Data.Repos.Casual_Emp;
 using CasualEmployee.API.Data.Repos.Emp_Task;
 using CasualEmployee.API.Data.Repos.Persons;
@@ -48,6 +49,7 @@ namespace CasualEmployee.API
             services.AddScoped<IPersonRepo, PersonRepo>();
             services.AddScoped<ICasualEmpRepo, CasualEmpRepo>();
             services.AddScoped<IEmpTaskRepo, ET_MockRepo>();
+            services.AddScoped<IAssignmentRepo, AssignmentRepo>();
             //Register connection string
             services.AddDbContext<CEContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("CEConnectionString")));
         }
